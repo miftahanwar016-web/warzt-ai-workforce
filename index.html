@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b18">
+<title>WARZT AI Workforce</title>
+<style>
+:root{--bg:#080a16;--panel:#101329;--panel2:#151a35;--line:#292e55;--text:#f4f5ff;--muted:#9ba2c3;--purple:#8b5cf6;--blue:#3b82f6;--cyan:#22d3ee;--green:#22c55e;--amber:#f59e0b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% -10%,#24205a 0,transparent 32%),var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{width:245px;background:#0b0e20;border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:24px;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;padding:4px 8px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#a855f7,#2563eb);display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 0 24px #8b5cf655}.brand b{font-size:17px;letter-spacing:.5px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#b6bddb;text-align:left;padding:12px 13px;border-radius:12px;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:linear-gradient(90deg,#5924a8,#22265a);color:white}.nav .ico{width:20px;text-align:center;font-size:17px}.sidebox{margin-top:auto;background:#111630;border:1px solid var(--line);padding:14px;border-radius:16px}.sidebox h4{margin:0 0 12px}.connectline{display:flex;align-items:center;justify-content:space-between;color:#dce0f7;margin:10px 0;font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:#667085;display:inline-block;margin-right:7px}.dot.ok{background:var(--green);box-shadow:0 0 9px #22c55e88}.main{flex:1;min-width:0;padding:25px 28px 40px;max-width:1700px;margin:auto;width:100%}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.top h1{font-size:24px;margin:0}.top p{color:var(--muted);margin:4px 0 0}.owner{border:1px solid var(--line);background:#11152b;padding:9px 14px;border-radius:30px;color:#e8eaff}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:17px}.card{background:linear-gradient(145deg,#131832,#0e1228);border:1px solid var(--line);border-radius:17px;padding:17px;box-shadow:0 12px 35px #0002}.stat{display:flex;align-items:center;gap:13px}.staticon{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;font-size:21px;background:#5224a455}.stat strong{display:block;font-size:25px;line-height:1.2}.stat span{color:var(--muted);font-size:12px}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.sectionhead h2{font-size:16px;margin:0}.sub{color:var(--muted);font-size:12px}.team{grid-template-columns:repeat(7,minmax(0,1fr));margin-bottom:17px}.employee{text-align:center;padding:15px 8px}.avatar{width:49px;height:49px;border-radius:50%;margin:0 auto 9px;display:grid;place-items:center;font-size:20px;background:linear-gradient(135deg,#7c3aed,#0891b2);border:2px solid #8b5cf6;position:relative}.avatar:after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:#64748b;border:2px solid #101329;right:-1px;bottom:0}.employee.online .avatar:after{background:var(--green)}.employee b{display:block;font-size:12px}.employee small{color:var(--muted);font-size:10px}.status{display:inline-block;margin-top:7px;border-radius:20px;padding:3px 8px;background:#26304b;color:#aab5d6;font-size:10px}.employee.online .status{background:#123b30;color:#73e5a6}.two{grid-template-columns:1fr 1.25fr;margin-bottom:17px}.command textarea{width:100%;min-height:100px;resize:vertical;background:#0b1025;border:1px solid #343b70;border-radius:12px;padding:13px;color:white;outline:none}.command textarea:focus{border-color:var(--purple)}.actions{display:flex;gap:9px;align-items:center;justify-content:space-between;margin-top:10px}.btn{border:0;border-radius:11px;padding:10px 15px;background:linear-gradient(90deg,#7c3aed,#4f46e5);color:white;font-weight:650}.btn.secondary{background:#202746;border:1px solid #353d68}.btn:disabled{opacity:.5;cursor:not-allowed}.pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:20px}.step{text-align:center;position:relative}.stepicon{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:#222a48;border:1px solid #465078}.step.done .stepicon{background:#124331;border-color:#1b9a65}.step.current .stepicon{background:#492080;border-color:#c084fc;box-shadow:0 0 18px #a855f755}.step b{display:block;font-size:11px}.step small{color:var(--muted);font-size:10px}.lower{grid-template-columns:1.2fr .8fr}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:11px 7px;border-bottom:1px solid #242b4c;font-size:12px}.table th{color:var(--muted);font-weight:500}.pill{padding:4px 8px;border-radius:20px;background:#252d4e;color:#cbd5f5;font-size:10px;white-space:nowrap}.pill.green{background:#123b30;color:#73e5a6}.socialrow{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #242b4c}.socialrow:last-child{border:0}.socialleft{display:flex;align-items:center;gap:11px}.socialicon{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;font-weight:800;background:#1d4ed8}.socialicon.ig{background:linear-gradient(135deg,#f97316,#c026d3)}.socialicon.drive{background:#166534}.socialrow small{display:block;color:var(--muted)}.toast{position:fixed;right:20px;bottom:20px;background:#17213b;border:1px solid #59638e;border-radius:12px;padding:12px 16px;display:none;max-width:320px;box-shadow:0 12px 30px #0008}.view{display:none}.view.active{display:block}.empty{color:var(--muted);padding:20px;text-align:center}.taskform{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:12px}.taskform input{min-width:0;background:#0b1025;border:1px solid #343b70;border-radius:10px;padding:11px;color:white}.note{font-size:11px;color:var(--muted);margin-top:12px}
+@media(max-width:1050px){.sidebar{width:205px}.team{grid-template-columns:repeat(4,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.app{display:block}.sidebar{width:100%;padding:12px;gap:10px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:3px}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:9px 11px;font-size:12px}.sidebox{display:none}.main{padding:18px 13px 30px}.top h1{font-size:19px}.top p{font-size:11px}.owner{font-size:11px}.stats{gap:9px}.card{padding:13px}.stat strong{font-size:21px}.team{grid-template-columns:repeat(2,1fr)}.two,.lower{grid-template-columns:1fr}.pipeline{grid-template-columns:repeat(3,1fr);row-gap:17px}.table th,.table td{font-size:11px;padding:9px 4px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">W</div><div><b>WARZT AI</b><small>WORKFORCE</small></div></div>
+ <div class="sub" style="padding:0 8px">AI VIDEO PRODUCTION COMPANY</div>
+ <nav class="nav">
+  <button class="active" data-view="dashboard"><span class="ico">⌂</span>Dashboard</button>
+  <button data-view="ceo"><span class="ico">◈</span>Perintah CEO</button>
+  <button data-view="employees"><span class="ico">♙</span>Karyawan AI</button>
+  <button data-view="projects"><span class="ico">▣</span>Proyek Produksi</button>
+  <button data-view="assets"><span class="ico">▤</span>Aset & Storage</button>
+  <button data-view="publishing"><span class="ico">↗</span>Publikasi</button>
+  <button data-view="reports"><span class="ico">▥</span>Laporan & KPI</button>
+  <button data-view="settings"><span class="ico">⚙</span>Pengaturan</button>
+ </nav>
+ <div class="sidebox"><h4>Koneksi layanan</h4>
+  <div class="connectline"><span>Facebook Page</span><span class="pill">Belum dihubungkan</span></div>
+  <div class="connectline"><span>Instagram</span><span class="pill">Belum dihubungkan</span></div>
+  <div class="connectline"><span>Google Drive</span><span class="pill">Belum dihubungkan</span></div>
+  <div class="connectline"><span>Akun Muse</span><span class="pill">Belum dihubungkan</span></div>
+ </div>
+</aside>
+<main class="main">
+<header class="top"><div><h1 id="pageTitle">Dashboard</h1><p>Pusat kendali produksi video berbasis Muse AI</p></div><div class="owner">◉ Owner · WARZT</div></header>
+
+<section class="view active" id="dashboard">
+ <div class="grid stats">
+  <div class="card stat"><div class="staticon">▶</div><div><strong id="statTasks">0</strong><span>Perintah tercatat</span></div></div>
+  <div class="card stat"><div class="staticon" style="background:#064e3b66">✓</div><div><strong>0</strong><span>Proyek selesai</span></div></div>
+  <div class="card stat"><div class="staticon" style="background:#07598566">▣</div><div><strong>0</strong><span>Video diproduksi</span></div></div>
+  <div class="card stat"><div class="staticon" style="background:#78350f66">♟</div><div><strong>7</strong><span>Posisi karyawan</span></div></div>
+ </div>
+ <div class="card" style="margin-bottom:17px">
+  <div class="sectionhead"><h2>Tim Karyawan AI (Muse)</h2><span class="sub">7 posisi · integrasi belum dilakukan</span></div>
+  <div class="grid team" id="teamGrid"></div>
+ </div>
+ <div class="grid two">
+  <div class="card command"><div class="sectionhead"><h2>▣ Perintah ke CEO</h2><span class="sub">Command Center</span></div>
+   <textarea id="commandInput" placeholder="Contoh: Buat video pendek 60 detik tentang ... Sertakan konsep, scene, gambar, video, caption, dan target Facebook serta Instagram."></textarea>
+   <div class="actions"><span class="sub">Perintah disimpan sebagai tugas lokal.</span><button class="btn" id="sendCommand">➤ Kirim ke CEO</button></div>
+  </div>
+  <div class="card"><div class="sectionhead"><h2>Pipeline Produksi</h2><span class="sub">Alur kerja standar</span></div>
+   <div class="pipeline">
+    <div class="step done"><div class="stepicon">⌕</div><b>Analisis</b><small>Menunggu tugas</small></div>
+    <div class="step"><div class="stepicon">✎</div><b>Prompt</b><small>Menunggu</small></div>
+    <div class="step"><div class="stepicon">▧</div><b>Gambar</b><small>Menunggu</small></div>
+    <div class="step"><div class="stepicon">▶</div><b>Video</b><small>Menunggu</small></div>
+    <div class="step"><div class="stepicon">✓</div><b>QC</b><small>Menunggu</small></div>
+    <div class="step"><div class="stepicon">↑</div><b>Publikasi</b><small>Menunggu</small></div>
+   </div>
+  </div>
+ </div>
+ <div class="grid lower">
+  <div class="card"><div class="sectionhead"><h2>Perintah Terbaru</h2><button class="btn secondary" data-goto="projects">Lihat semua</button></div><div id="recentTasks" class="empty">Belum ada perintah. Kirim perintah pertama melalui Command Center.</div></div>
+  <div class="card"><div class="sectionhead"><h2>Saluran Publikasi</h2><span class="sub">Status koneksi</span></div>
+   <div class="socialrow"><div class="socialleft"><div class="socialicon">f</div><div><b>Facebook Page</b><small>Menunggu koneksi</small></div></div><span class="pill">Belum terhubung</span></div>
+   <div class="socialrow"><div class="socialleft"><div class="socialicon ig">◎</div><div><b>Instagram</b><small>Menunggu koneksi</small></div></div><span class="pill">Belum terhubung</span></div>
+   <div class="socialrow"><div class="socialleft"><div class="socialicon drive">△</div><div><b>Google Drive</b><small>Arsip aset produksi</small></div></div><span class="pill">Belum terhubung</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="view" id="ceo"><div class="card command"><h2>Perintah CEO</h2><p class="sub">Tuliskan tujuan produksi. Sistem akan mencatatnya sebagai tugas untuk diproses setelah akun Muse terintegrasi.</p><textarea id="commandInput2" placeholder="Tulis instruksi lengkap untuk CEO..."></textarea><div class="actions"><span class="sub">Belum dikirim ke Muse.</span><button class="btn" id="sendCommand2">Kirim perintah</button></div></div><div class="card" style="margin-top:16px"><h2>Aturan delegasi</h2><p class="sub">CEO → Video Analyst → Prompt Engineer → Image Creator → Video Creator → Quality Control → Publisher.</p></div></section>
+
+<section class="view" id="employees"><div class="card"><div class="sectionhead"><h2>Direktori Karyawan AI</h2><span class="sub">Identitas kerja, belum terhubung ke akun Muse</span></div><div id="employeeList"></div></div></section>
+
+<section class="view" id="projects"><div class="card"><div class="sectionhead"><h2>Daftar Perintah & Proyek</h2><span class="sub">Tersimpan di browser ini</span></div><div id="allTasks" class="empty">Belum ada proyek.</div></div></section>
+
+<section class="view" id="assets"><div class="card"><h2>Aset & Storage</h2><p class="sub">Area ini disiapkan untuk menyimpan brief, prompt, gambar, video, dan hasil final. Penyimpanan cloud belum dihubungkan.</p><div class="note">Integrasi Google Drive akan ditambahkan setelah otorisasi akun dan pengujian izin akses.</div></div></section>
+
+<section class="view" id="publishing"><div class="card"><h2>Publikasi Facebook & Instagram</h2><p class="sub">Hubungkan layanan setelah dashboard siap. Status saat ini: belum terhubung.</p><div class="socialrow"><div class="socialleft"><div class="socialicon">f</div><div><b>Facebook Page</b><small>Untuk publikasi video ke Page</small></div></div><span class="pill">Belum terhubung</span></div><div class="socialrow"><div class="socialleft"><div class="socialicon ig">◎</div><div><b>Instagram Professional</b><small>Untuk publikasi Reels</small></div></div><span class="pill">Belum terhubung</span></div><p class="note">Koneksi dan publikasi memerlukan otorisasi resmi Meta serta pengujian izin. Tombol koneksi belum diaktifkan pada prototipe ini.</p></div></section>
+
+<section class="view" id="reports"><div class="card"><h2>Laporan & KPI</h2><p class="sub">KPI akan dihitung dari pekerjaan yang benar-benar dijalankan setelah integrasi aktif.</p><div class="empty">Belum ada data kinerja.</div></div></section>
+
+<section class="view" id="settings"><div class="card"><h2>Pengaturan Integrasi</h2><div class="socialrow"><div><b>Muse AI</b><small class="sub">Akun karyawan dan metode otomasi</small></div><span class="pill">Belum dikonfigurasi</span></div><div class="socialrow"><div><b>Meta / Facebook / Instagram</b><small class="sub">Akun publikasi perusahaan</small></div><span class="pill">Belum terhubung</span></div><div class="socialrow"><div><b>Google Drive</b><small class="sub">Penyimpanan file produksi</small></div><span class="pill">Belum terhubung</span></div><p class="note">Jangan masukkan password atau OTP ke dashboard prototipe. Integrasi nyata akan memakai alur otorisasi yang aman.</p></div></section>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const employees=[
+ ["CEO","Strategi & kendali","👨‍💼"],["Video Analyst","Analisis referensi","🔎"],["Prompt Engineer","Storyboard & prompt","✍️"],["Image Creator","Produksi gambar","🎨"],["Video Creator","Produksi video","🎬"],["Quality Control","Review & revisi","🛡️"],["Publisher","Distribusi konten","📤"]
+];
+const teamGrid=document.getElementById('teamGrid');
+teamGrid.innerHTML=employees.map((e,i)=>`<div class="employee"><div class="avatar">${e[2]}</div><b>${e[0]}</b><small>${e[1]}</small><div class="status">Belum terhubung</div></div>`).join('');
+document.getElementById('employeeList').innerHTML=employees.map((e,i)=>`<div class="socialrow"><div class="socialleft"><div class="avatar" style="margin:0;width:40px;height:40px">${e[2]}</div><div><b>${e[0]}</b><small>${e[1]}</small></div></div><span class="pill">Akun Muse belum ditautkan</span></div>`).join('');
+let tasks=JSON.parse(localStorage.getItem('warzt_tasks')||'[]');
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){
+ document.getElementById('statTasks').textContent=tasks.length;
+ const rows=tasks.map((t,i)=>`<tr><td>${i+1}</td><td>${esc(t.text)}</td><td><span class="pill">Menunggu integrasi</span></td><td>${t.date}</td></tr>`).join('');
+ document.getElementById('recentTasks').innerHTML=tasks.length?`<table class="table"><thead><tr><th>Perintah</th><th>Status</th></tr></thead><tbody>${tasks.slice(0,4).map(t=>`<tr><td>${esc(t.text)}</td><td><span class="pill">Draft</span></td></tr>`).join('')}</tbody></table>`:'<div class="empty">Belum ada perintah. Kirim perintah pertama melalui Command Center.</div>';
+ document.getElementById('allTasks').innerHTML=tasks.length?`<table class="table"><thead><tr><th>#</th><th>Perintah</th><th>Status</th><th>Tanggal</th></tr></thead><tbody>${rows}</tbody></table>`:'<div class="empty">Belum ada proyek.</div>';
+ localStorage.setItem('warzt_tasks',JSON.stringify(tasks));
+}
+function addTask(id){const el=document.getElementById(id);const text=el.value.trim();if(!text){showToast('Tulis perintah terlebih dahulu.');return;}tasks.unshift({text,date:new Date().toLocaleString('id-ID'),status:'Draft'});el.value='';render();showToast('Perintah tersimpan di dashboard. Belum dikirim ke Muse.');}
+document.getElementById('sendCommand').onclick=()=>addTask('commandInput');
+document.getElementById('sendCommand2').onclick=()=>addTask('commandInput2');
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',3200);}
+function go(view){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===view));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const active=document.getElementById(view);document.getElementById('pageTitle').textContent=({dashboard:'Dashboard',ceo:'Perintah CEO',employees:'Karyawan AI',projects:'Proyek Produksi',assets:'Aset & Storage',publishing:'Publikasi',reports:'Laporan & KPI',settings:'Pengaturan'})[view]||'Dashboard';}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
+render();
+</script>
+</body>
+    </html>
